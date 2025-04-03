@@ -1,10 +1,8 @@
 import React from 'react';
 import { Container, Typography, Box, Button, Grid } from '@mui/material';
-import type { GridProps } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
-
-const GridItem = ({ children, ...props }: GridProps) => <Grid {...props}>{children}</Grid>;
+import { GridItem } from '../components/GridItem';
 
 const Home = () => {
     return (

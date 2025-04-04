@@ -12,7 +12,6 @@ import {
     CardActions,
     Button,
     Avatar,
-    LinearProgress,
     Link,
 } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -20,45 +19,90 @@ import LanguageIcon from '@mui/icons-material/Language';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
-import DataArrayIcon from '@mui/icons-material/DataArray';
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import BusinessIcon from '@mui/icons-material/Business';
 import PieChartIcon from '@mui/icons-material/PieChart';
+import EmailIcon from '@mui/icons-material/Email';
+import SchoolIcon from '@mui/icons-material/School';
+import WorkIcon from '@mui/icons-material/Work';
 
 const SinglePage: React.FC = () => {
     // Skills data - Updated for Business/Data Analyst
     const analyticalSkills = [
-        { name: 'Data Analysis', proficiency: 95 },
-        { name: 'Statistical Analysis', proficiency: 90 },
-        { name: 'Data Visualization', proficiency: 92 },
-        { name: 'Business Intelligence', proficiency: 88 },
-        { name: 'Financial Analysis', proficiency: 85 },
-        { name: 'Market Research', proficiency: 82 },
+        { name: 'Data Analysis' },
+        { name: 'Statistical Analysis' },
+        { name: 'Data Visualization' },
+        { name: 'Business Intelligence' },
+        { name: 'Financial Analysis' },
+        { name: 'Market Research' },
     ];
 
     const technicalSkills = [
-        { name: 'Excel/Google Sheets', proficiency: 95 },
-        { name: 'SQL', proficiency: 90 },
-        { name: 'Python', proficiency: 88 },
-        { name: 'Tableau/Power BI', proficiency: 85 },
-        { name: 'R', proficiency: 80 },
-        { name: 'Machine Learning', proficiency: 78 },
+        { name: 'Excel/Google Sheets' },
+        { name: 'SQL' },
+        { name: 'Python' },
+        { name: 'Tableau/Power BI' },
+        { name: 'R' },
+        { name: 'Machine Learning' },
     ];
 
     // Languages data
     const languages = [
         { name: 'English', level: 'Fluent' },
         { name: 'Greek', level: 'Native' },
-        // Add more languages as needed
+        { name: 'Spanish', level: 'Intermediate' },
+        { name: 'Danish', level: 'Beginner' },
+    ];
+
+    // Education data
+    const education = [
+        {
+            degree: 'MSc in Business Analytics',
+            institution: 'Technical University of Denmark (DTU)',
+            period: 'Feb 2025 - Present'
+        },
+        {
+            degree: 'MSc in Production and Management Engineering',
+            institution: 'Democritus University of Thrace',
+            period: '2016 - 2022'
+        }
+    ];
+
+    // Work Experience
+    const workExperience = [
+        {
+            title: 'Vocational Education Manager',
+            company: 'Vocational Education Center',
+            location: 'Veria, Greece',
+            period: 'Jun 2020 – Jan 2025',
+            responsibilities: [
+                'Designed and implemented data-informed vocational training programs aligned with EU labor market demands, supporting strategic workforce development.',
+                'Led digital transformation of curriculum by integrating data analytics tools, learning management systems (LMS), and modern educational technologies.',
+                'Developed KPI-based program evaluation models to monitor training effectiveness and optimize learner outcomes.',
+                'Managed cross-functional teams to deliver customized upskilling initiatives for adult learners based on demographic and market data insights.',
+                'Oversaw social media strategy using data analytics to measure engagement and improve campaign effectiveness.'
+            ]
+        },
+        {
+            title: 'Reservation Manager',
+            company: 'Olganos VI, Luxury Rooms & Suites',
+            location: 'Veria, Greece',
+            period: 'Jul 2018 – Jan 2019',
+            responsibilities: [
+                'Analyzed customer and booking data to optimize dynamic pricing models',
+                'Monitored a data-driven customer feedback dashboard, achieving a 95% satisfaction rate.',
+                'Automated reporting processes using Excel and SQL',
+                'Leveraged customer behavior analytics to increase repeat bookings through personalized offers and communication.'
+            ]
+        }
     ];
 
     // Projects data - Reframed for business/data analysis
     const projects = [
         {
-            title: 'Energy Consumption Analytics',
-            description: 'Comprehensive analysis of energy consumption patterns with actionable business insights, cost-saving recommendations, and future consumption forecasts.',
-            technologies: ['Python', 'Data Analysis', 'Statistical Modeling', 'Tableau'],
-            github: 'https://github.com/kouropalatis/energy-consumption-forecasting',
+            title: 'Course Project: Social Data Analysis and Visualization',
+            description: 'An interactive, magazine-style data story exploring trends in San Francisco crime data from 2014 to 2024. The project involved collecting, cleaning, and analyzing the data to uncover patterns and communicate them through clear visualizations and storytelling. Visuals include time-series charts, maps, and a custom interactive Bokeh plot.',
+            technologies: ['Data wrangling (Pandas)', 'Bokeh', 'Data storytelling', 'HTML/CSS', 'GitHub Pages'],
+            github: 'https://github.com/kouropalatis/kouropalatis.github.io',
+            website: 'https://kouropalatis.github.io/',
             icon: <ShowChartIcon fontSize="large" />
         },
         {
@@ -84,22 +128,6 @@ const SinglePage: React.FC = () => {
         }
     ];
 
-    // Additional business-relevant experience
-    const businessExperience = [
-        {
-            title: "Market Research & Competitive Analysis",
-            description: "Conducted in-depth market research and competitive analysis to identify market gaps and opportunities."
-        },
-        {
-            title: "Data-Driven Decision Making",
-            description: "Provided actionable insights from complex datasets to support strategic business decisions."
-        },
-        {
-            title: "Financial Reporting & Analysis",
-            description: "Created financial reports, dashboards, and KPI tracking systems for performance monitoring."
-        }
-    ];
-
     return (
         <Container maxWidth="lg" sx={{ py: 6 }}>
             {/* Header Section - Name and Description */}
@@ -111,19 +139,22 @@ const SinglePage: React.FC = () => {
                         margin: '0 auto 16px',
                         bgcolor: 'primary.main'
                     }}
-                    title="Konstantinos Kouropalatis"
+                    title="Konstantinos Lykostratis"
                 >
                     K
                 </Avatar>
                 <Typography variant="h3" component="h1" gutterBottom fontWeight="bold">
-                    Konstantinos Kouropalatis
+                    Konstantinos Lykostratis
                 </Typography>
                 <Typography variant="h5" color="text.secondary" paragraph>
                     Business & Data Analyst
                 </Typography>
                 <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 700, mx: 'auto', mb: 3 }}>
-                    Analytical professional with expertise in transforming complex data into actionable business insights.
-                    Specialized in financial analysis, business intelligence, and creating data visualizations that drive strategic decision-making.
+                    Currently on my first semester of a MSc in Business Analytics at the Technical University of Denmark (DTU).
+                    I am passionate about using data to drive business decisions and improve operations and this is the reason why I chose this MSc.
+                    I recently moved to Copenhagen and I am here to stay, I love the city, the culture and the people and I could see myself living here for a long time.
+                    Before moving here, I earned a MSc in Production and Management Engineering and gained over 5 years of professional experience as a Vocational Education Manager and a Reservations Manager.
+                    I build this website to showcase my work and to share my knowledge and to connect with other professionals in the field.
                 </Typography>
                 <Stack direction="row" spacing={2} justifyContent="center">
                     <Button
@@ -139,10 +170,18 @@ const SinglePage: React.FC = () => {
                         variant="outlined"
                         startIcon={<LanguageIcon />}
                         component={Link}
-                        href="https://linkedin.com/in/yourprofile" // Update with your actual LinkedIn
+                        href="https://www.linkedin.com/in/konstantinos-lykostratis/"
                         target="_blank"
                     >
                         LinkedIn
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        startIcon={<EmailIcon />}
+                        component={Link}
+                        href="mailto:lykostratisk@gmail.com"
+                    >
+                        Email
                     </Button>
                 </Stack>
             </Box>
@@ -161,19 +200,11 @@ const SinglePage: React.FC = () => {
                             <Typography variant="h6" gutterBottom>
                                 Analytical Skills
                             </Typography>
-                            {analyticalSkills.map((skill) => (
-                                <Box key={skill.name} sx={{ mb: 2 }}>
-                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                                        <Typography variant="body1">{skill.name}</Typography>
-                                        <Typography variant="body2" color="text.secondary">{skill.proficiency}%</Typography>
-                                    </Box>
-                                    <LinearProgress
-                                        variant="determinate"
-                                        value={skill.proficiency}
-                                        sx={{ height: 8, borderRadius: 4 }}
-                                    />
-                                </Box>
-                            ))}
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                {analyticalSkills.map((skill) => (
+                                    <Chip key={skill.name} label={skill.name} />
+                                ))}
+                            </Box>
                         </Paper>
                     </Box>
                     <Box sx={{ width: '100%' }}>
@@ -181,19 +212,11 @@ const SinglePage: React.FC = () => {
                             <Typography variant="h6" gutterBottom>
                                 Technical Skills
                             </Typography>
-                            {technicalSkills.map((skill) => (
-                                <Box key={skill.name} sx={{ mb: 2 }}>
-                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                                        <Typography variant="body1">{skill.name}</Typography>
-                                        <Typography variant="body2" color="text.secondary">{skill.proficiency}%</Typography>
-                                    </Box>
-                                    <LinearProgress
-                                        variant="determinate"
-                                        value={skill.proficiency}
-                                        sx={{ height: 8, borderRadius: 4 }}
-                                    />
-                                </Box>
-                            ))}
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                {technicalSkills.map((skill) => (
+                                    <Chip key={skill.name} label={skill.name} />
+                                ))}
+                            </Box>
                         </Paper>
                     </Box>
                 </Stack>
@@ -201,30 +224,69 @@ const SinglePage: React.FC = () => {
 
             <Divider sx={{ mb: 6 }} />
 
-            {/* Business Experience Section */}
+            {/* Education Section */}
             <Box sx={{ mb: 8 }}>
                 <Typography variant="h4" component="h2" gutterBottom fontWeight="bold" textAlign="center">
-                    Business Experience
-                </Typography>
-                <Typography variant="body1" color="text.secondary" paragraph textAlign="center" sx={{ mb: 4 }}>
-                    Proven track record in delivering data-driven business solutions
+                    Education
                 </Typography>
 
-                <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
-                    {businessExperience.map((experience, index) => (
-                        <Box key={index} sx={{ width: '100%' }}>
-                            <Paper elevation={2} sx={{ p: 3, height: '100%' }}>
-                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                    <BusinessIcon color="primary" sx={{ mr: 1.5 }} />
-                                    <Typography variant="h6" fontWeight="medium">
-                                        {experience.title}
+                <Stack spacing={3} sx={{ mt: 3 }}>
+                    {education.map((edu, index) => (
+                        <Paper key={index} elevation={2} sx={{ p: 3 }}>
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                                <SchoolIcon color="primary" sx={{ mt: 0.5, mr: 2 }} />
+                                <Box>
+                                    <Typography variant="h6" fontWeight="bold" gutterBottom>
+                                        {edu.degree}
+                                    </Typography>
+                                    <Typography variant="body1" gutterBottom>
+                                        {edu.institution}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {edu.period}
                                     </Typography>
                                 </Box>
-                                <Typography variant="body1">
-                                    {experience.description}
-                                </Typography>
-                            </Paper>
-                        </Box>
+                            </Box>
+                        </Paper>
+                    ))}
+                </Stack>
+            </Box>
+
+            <Divider sx={{ mb: 6 }} />
+
+            {/* Work Experience Section */}
+            <Box sx={{ mb: 8 }}>
+                <Typography variant="h4" component="h2" gutterBottom fontWeight="bold" textAlign="center">
+                    Work Experience
+                </Typography>
+
+                <Stack spacing={4} sx={{ mt: 3 }}>
+                    {workExperience.map((work, index) => (
+                        <Paper key={index} elevation={2} sx={{ p: 3 }}>
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                                <WorkIcon color="primary" sx={{ mt: 0.5, mr: 2 }} />
+                                <Box>
+                                    <Typography variant="h6" fontWeight="bold" gutterBottom>
+                                        {work.title}
+                                    </Typography>
+                                    <Typography variant="body1" gutterBottom>
+                                        {work.company}, {work.location}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" gutterBottom>
+                                        {work.period}
+                                    </Typography>
+                                    <Box component="ul" sx={{ pl: 2, mt: 1 }}>
+                                        {work.responsibilities.map((resp, i) => (
+                                            <Box component="li" key={i} sx={{ mb: 1 }}>
+                                                <Typography variant="body2">
+                                                    {resp}
+                                                </Typography>
+                                            </Box>
+                                        ))}
+                                    </Box>
+                                </Box>
+                            </Box>
+                        </Paper>
                     ))}
                 </Stack>
             </Box>
@@ -271,6 +333,17 @@ const SinglePage: React.FC = () => {
                                         >
                                             Project Repository
                                         </Button>
+                                        {project.website && (
+                                            <Button
+                                                size="small"
+                                                startIcon={<LanguageIcon />}
+                                                component={Link}
+                                                href={project.website}
+                                                target="_blank"
+                                            >
+                                                Live Demo
+                                            </Button>
+                                        )}
                                     </CardActions>
                                 </Card>
                             </Box>
@@ -306,6 +379,17 @@ const SinglePage: React.FC = () => {
                                         >
                                             Project Repository
                                         </Button>
+                                        {project.website && (
+                                            <Button
+                                                size="small"
+                                                startIcon={<LanguageIcon />}
+                                                component={Link}
+                                                href={project.website}
+                                                target="_blank"
+                                            >
+                                                Live Demo
+                                            </Button>
+                                        )}
                                     </CardActions>
                                 </Card>
                             </Box>
@@ -335,7 +419,7 @@ const SinglePage: React.FC = () => {
             {/* Footer */}
             <Box sx={{ textAlign: 'center', mt: 8, color: 'text.secondary' }}>
                 <Typography variant="body2">
-                    © {new Date().getFullYear()} Konstantinos Kouropalatis. All rights reserved.
+                    © {new Date().getFullYear()} Konstantinos Lykostratis. All rights reserved.
                 </Typography>
             </Box>
         </Container>

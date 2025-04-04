@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import CV from './pages/CV';
+import SinglePage from './pages/SinglePage';
 
 const theme = createTheme({
   palette: {
@@ -12,7 +12,7 @@ const theme = createTheme({
       main: '#455a64',
     },
     background: {
-      default: '#f5f5f5',
+      default: '#ffffff',
     },
   },
   typography: {
@@ -45,14 +45,6 @@ const theme = createTheme({
         },
       },
     },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
-          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-        },
-      },
-    },
   },
 });
 
@@ -60,7 +52,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <CV />
+      <SinglePage />
     </ThemeProvider>
   );
 }

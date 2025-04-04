@@ -1,15 +1,15 @@
 import React from 'react';
-import { Grid, GridProps } from '@mui/material';
-import { motion } from 'framer-motion';
+import { Grid } from '@mui/material';
+import type { GridProps } from '@mui/material';
 
-export const GridItem: React.FC<GridProps> = ({ children, ...props }) => {
-    return (
-        <Grid {...props} component={motion.div}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
-            {children}
-        </Grid>
-    );
+interface CustomGridProps extends GridProps {
+    item?: boolean;
+    xs?: number;
+    sm?: number;
+    md?: number;
+    lg?: number;
+}
+
+export const GridItem: React.FC<CustomGridProps> = (props) => {
+    return <Grid component="div" {...props} />;
 }; 

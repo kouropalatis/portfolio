@@ -1,11 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import About from './pages/About';
+import CV from './pages/CV';
 
 const theme = createTheme({
   palette: {
@@ -16,7 +12,7 @@ const theme = createTheme({
       main: '#455a64',
     },
     background: {
-      default: '#ffffff',
+      default: '#f5f5f5',
     },
   },
   typography: {
@@ -49,6 +45,14 @@ const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+        },
+      },
+    },
   },
 });
 
@@ -56,14 +60,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router basename="/portfolio">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </Router>
+      <CV />
     </ThemeProvider>
   );
 }

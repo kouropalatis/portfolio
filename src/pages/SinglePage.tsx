@@ -92,6 +92,7 @@ const SinglePage: React.FC = () => {
                         margin: '0 auto 16px',
                         bgcolor: 'primary.main'
                     }}
+                    title="Konstantinos Kouropalatis"
                 >
                     K
                 </Avatar>

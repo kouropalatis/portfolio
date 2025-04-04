@@ -106,25 +106,22 @@ const SinglePage: React.FC = () => {
             icon: <ShowChartIcon fontSize="large" />
         },
         {
+            title: 'Energy Consumption Forecasting',
+            description: 'I Will upload the project here soon.',
+            technologies: ['Data Visualization', 'Business Intelligence', 'Excel', 'Python'],
+            icon: <AnalyticsIcon fontSize="large" />
+        },
+        {
             title: 'Social Media Analytics Dashboard',
-            description: 'Interactive business intelligence dashboard for tracking KPIs, audience engagement metrics, and ROI across multiple social media platforms.',
+            description: 'I Will upload the project here soon.',
             technologies: ['Data Visualization', 'Business Intelligence', 'Excel', 'SQL'],
-            github: 'https://github.com/kouropalatis/Social-Media-Analytics-Dashboard',
             icon: <AnalyticsIcon fontSize="large" />
         },
         {
             title: 'Time Series Analysis & Forecasting',
-            description: 'Advanced statistical analysis of time-series data to identify business trends, seasonality patterns, and create reliable forecasting models.',
+            description: 'I Will upload the project here soon.',
             technologies: ['R', 'Python', 'Statistical Analysis', 'Business Reporting'],
-            github: 'https://github.com/kouropalatis/TimeSeriesForecasting',
             icon: <TimelineIcon fontSize="large" />
-        },
-        {
-            title: 'Social Media Performance Metrics',
-            description: 'End-to-end analysis of social media performance with comprehensive reporting, competitor benchmarking, and content strategy optimization.',
-            technologies: ['Power BI', 'Market Analysis', 'KPI Tracking', 'Python'],
-            github: 'https://github.com/kouropalatis/Social-media-predictor',
-            icon: <PieChartIcon fontSize="large" />
         }
     ];
 

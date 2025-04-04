@@ -3,19 +3,15 @@ import {
     Container,
     Typography,
     Box,
-    Grid,
+    Stack,
     Paper,
     Chip,
     Divider,
-    List,
-    ListItem,
-    ListItemText,
     Card,
     CardContent,
     CardActions,
     Button,
     Avatar,
-    Stack,
     LinearProgress,
     Link,
 } from '@mui/material';
@@ -139,8 +135,8 @@ const SinglePage: React.FC = () => {
                     Skills & Expertise
                 </Typography>
 
-                <Grid container spacing={4} sx={{ mt: 2 }}>
-                    <Grid item xs={12} md={6}>
+                <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} sx={{ mt: 2 }}>
+                    <Box sx={{ width: '100%' }}>
                         <Paper elevation={2} sx={{ p: 3 }}>
                             <Typography variant="h6" gutterBottom>
                                 Technical Skills
@@ -159,8 +155,8 @@ const SinglePage: React.FC = () => {
                                 </Box>
                             ))}
                         </Paper>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
+                    </Box>
+                    <Box sx={{ width: '100%' }}>
                         <Paper elevation={2} sx={{ p: 3 }}>
                             <Typography variant="h6" gutterBottom>
                                 Software & Tools
@@ -179,8 +175,8 @@ const SinglePage: React.FC = () => {
                                 </Box>
                             ))}
                         </Paper>
-                    </Grid>
-                </Grid>
+                    </Box>
+                </Stack>
             </Box>
 
             <Divider sx={{ mb: 6 }} />
@@ -194,41 +190,78 @@ const SinglePage: React.FC = () => {
                     Showcasing my recent work in data science, machine learning, and web development
                 </Typography>
 
-                <Grid container spacing={4}>
-                    {projects.map((project) => (
-                        <Grid item xs={12} md={6} key={project.title}>
-                            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                <Box sx={{ p: 2, bgcolor: 'primary.main', color: 'white', display: 'flex', alignItems: 'center' }}>
-                                    {project.icon}
-                                    <Typography variant="h6" sx={{ ml: 1 }}>
-                                        {project.title}
-                                    </Typography>
-                                </Box>
-                                <CardContent sx={{ flexGrow: 1 }}>
-                                    <Typography variant="body1" paragraph>
-                                        {project.description}
-                                    </Typography>
-                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                                        {project.technologies.map((tech) => (
-                                            <Chip key={tech} label={tech} size="small" />
-                                        ))}
+                <Stack spacing={4}>
+                    <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
+                        {projects.slice(0, 2).map((project) => (
+                            <Box key={project.title} sx={{ width: '100%' }}>
+                                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                                    <Box sx={{ p: 2, bgcolor: 'primary.main', color: 'white', display: 'flex', alignItems: 'center' }}>
+                                        {project.icon}
+                                        <Typography variant="h6" sx={{ ml: 1 }}>
+                                            {project.title}
+                                        </Typography>
                                     </Box>
-                                </CardContent>
-                                <CardActions>
-                                    <Button
-                                        size="small"
-                                        startIcon={<GitHubIcon />}
-                                        component={Link}
-                                        href={project.github}
-                                        target="_blank"
-                                    >
-                                        GitHub Repository
-                                    </Button>
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
+                                    <CardContent sx={{ flexGrow: 1 }}>
+                                        <Typography variant="body1" paragraph>
+                                            {project.description}
+                                        </Typography>
+                                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                            {project.technologies.map((tech) => (
+                                                <Chip key={tech} label={tech} size="small" />
+                                            ))}
+                                        </Box>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button
+                                            size="small"
+                                            startIcon={<GitHubIcon />}
+                                            component={Link}
+                                            href={project.github}
+                                            target="_blank"
+                                        >
+                                            GitHub Repository
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </Box>
+                        ))}
+                    </Stack>
+                    <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
+                        {projects.slice(2, 4).map((project) => (
+                            <Box key={project.title} sx={{ width: '100%' }}>
+                                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                                    <Box sx={{ p: 2, bgcolor: 'primary.main', color: 'white', display: 'flex', alignItems: 'center' }}>
+                                        {project.icon}
+                                        <Typography variant="h6" sx={{ ml: 1 }}>
+                                            {project.title}
+                                        </Typography>
+                                    </Box>
+                                    <CardContent sx={{ flexGrow: 1 }}>
+                                        <Typography variant="body1" paragraph>
+                                            {project.description}
+                                        </Typography>
+                                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                            {project.technologies.map((tech) => (
+                                                <Chip key={tech} label={tech} size="small" />
+                                            ))}
+                                        </Box>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button
+                                            size="small"
+                                            startIcon={<GitHubIcon />}
+                                            component={Link}
+                                            href={project.github}
+                                            target="_blank"
+                                        >
+                                            GitHub Repository
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </Box>
+                        ))}
+                    </Stack>
+                </Stack>
             </Box>
 
             <Divider sx={{ mb: 6 }} />
@@ -239,16 +272,14 @@ const SinglePage: React.FC = () => {
                     Languages
                 </Typography>
 
-                <Grid container justifyContent="center" spacing={2} sx={{ mt: 2 }}>
+                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center" sx={{ mt: 2 }}>
                     {languages.map((language) => (
-                        <Grid item key={language.name}>
-                            <Paper elevation={2} sx={{ p: 2, textAlign: 'center', minWidth: 160 }}>
-                                <Typography variant="h6">{language.name}</Typography>
-                                <Typography variant="body2" color="text.secondary">{language.level}</Typography>
-                            </Paper>
-                        </Grid>
+                        <Paper key={language.name} elevation={2} sx={{ p: 2, textAlign: 'center', minWidth: 160 }}>
+                            <Typography variant="h6">{language.name}</Typography>
+                            <Typography variant="body2" color="text.secondary">{language.level}</Typography>
+                        </Paper>
                     ))}
-                </Grid>
+                </Stack>
             </Box>
 
             {/* Footer */}

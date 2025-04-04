@@ -15,31 +15,34 @@ import {
     LinearProgress,
     Link,
 } from '@mui/material';
-import CodeIcon from '@mui/icons-material/Code';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import DataArrayIcon from '@mui/icons-material/DataArray';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import BusinessIcon from '@mui/icons-material/Business';
+import PieChartIcon from '@mui/icons-material/PieChart';
 
 const SinglePage: React.FC = () => {
-    // Skills data
-    const technicalSkills = [
-        { name: 'Python', proficiency: 95 },
-        { name: 'JavaScript/TypeScript', proficiency: 90 },
-        { name: 'React', proficiency: 85 },
-        { name: 'Data Analysis', proficiency: 90 },
-        { name: 'Machine Learning', proficiency: 85 },
-        { name: 'Time Series Forecasting', proficiency: 88 },
+    // Skills data - Updated for Business/Data Analyst
+    const analyticalSkills = [
+        { name: 'Data Analysis', proficiency: 95 },
+        { name: 'Statistical Analysis', proficiency: 90 },
+        { name: 'Data Visualization', proficiency: 92 },
+        { name: 'Business Intelligence', proficiency: 88 },
+        { name: 'Financial Analysis', proficiency: 85 },
+        { name: 'Market Research', proficiency: 82 },
     ];
 
-    const softwareSkills = [
-        { name: 'Git', proficiency: 90 },
-        { name: 'Docker', proficiency: 80 },
-        { name: 'SQL', proficiency: 85 },
-        { name: 'AWS', proficiency: 75 },
-        { name: 'TensorFlow/PyTorch', proficiency: 80 },
+    const technicalSkills = [
+        { name: 'Excel/Google Sheets', proficiency: 95 },
+        { name: 'SQL', proficiency: 90 },
+        { name: 'Python', proficiency: 88 },
+        { name: 'Tableau/Power BI', proficiency: 85 },
+        { name: 'R', proficiency: 80 },
+        { name: 'Machine Learning', proficiency: 78 },
     ];
 
     // Languages data
@@ -49,35 +52,51 @@ const SinglePage: React.FC = () => {
         // Add more languages as needed
     ];
 
-    // Projects data
+    // Projects data - Reframed for business/data analysis
     const projects = [
         {
-            title: 'Energy Consumption Forecasting',
-            description: 'A machine learning application for forecasting energy consumption patterns using time series analysis and predictive modeling.',
-            technologies: ['Python', 'TensorFlow', 'Time Series Analysis', 'Pandas'],
+            title: 'Energy Consumption Analytics',
+            description: 'Comprehensive analysis of energy consumption patterns with actionable business insights, cost-saving recommendations, and future consumption forecasts.',
+            technologies: ['Python', 'Data Analysis', 'Statistical Modeling', 'Tableau'],
             github: 'https://github.com/kouropalatis/energy-consumption-forecasting',
             icon: <ShowChartIcon fontSize="large" />
         },
         {
             title: 'Social Media Analytics Dashboard',
-            description: 'Interactive dashboard for tracking and visualizing social media metrics, engagement, and trends across multiple platforms.',
-            technologies: ['React', 'Node.js', 'Material-UI', 'Data Visualization'],
+            description: 'Interactive business intelligence dashboard for tracking KPIs, audience engagement metrics, and ROI across multiple social media platforms.',
+            technologies: ['Data Visualization', 'Business Intelligence', 'Excel', 'SQL'],
             github: 'https://github.com/kouropalatis/Social-Media-Analytics-Dashboard',
             icon: <AnalyticsIcon fontSize="large" />
         },
         {
-            title: 'Time Series Forecasting',
-            description: 'Advanced time series forecasting models for predicting future trends using statistical methods and deep learning approaches.',
-            technologies: ['Python', 'Statistical Modeling', 'Deep Learning', 'Forecasting'],
+            title: 'Time Series Analysis & Forecasting',
+            description: 'Advanced statistical analysis of time-series data to identify business trends, seasonality patterns, and create reliable forecasting models.',
+            technologies: ['R', 'Python', 'Statistical Analysis', 'Business Reporting'],
             github: 'https://github.com/kouropalatis/TimeSeriesForecasting',
             icon: <TimelineIcon fontSize="large" />
         },
         {
-            title: 'Social Media Predictor',
-            description: 'Prediction engine for social media performance metrics using machine learning algorithms to optimize content strategy.',
-            technologies: ['Python', 'React', 'Machine Learning', 'API Integration'],
+            title: 'Social Media Performance Metrics',
+            description: 'End-to-end analysis of social media performance with comprehensive reporting, competitor benchmarking, and content strategy optimization.',
+            technologies: ['Power BI', 'Market Analysis', 'KPI Tracking', 'Python'],
             github: 'https://github.com/kouropalatis/Social-media-predictor',
-            icon: <DataArrayIcon fontSize="large" />
+            icon: <PieChartIcon fontSize="large" />
+        }
+    ];
+
+    // Additional business-relevant experience
+    const businessExperience = [
+        {
+            title: "Market Research & Competitive Analysis",
+            description: "Conducted in-depth market research and competitive analysis to identify market gaps and opportunities."
+        },
+        {
+            title: "Data-Driven Decision Making",
+            description: "Provided actionable insights from complex datasets to support strategic business decisions."
+        },
+        {
+            title: "Financial Reporting & Analysis",
+            description: "Created financial reports, dashboards, and KPI tracking systems for performance monitoring."
         }
     ];
 
@@ -100,11 +119,11 @@ const SinglePage: React.FC = () => {
                     Konstantinos Kouropalatis
                 </Typography>
                 <Typography variant="h5" color="text.secondary" paragraph>
-                    Data Scientist & Full Stack Developer
+                    Business & Data Analyst
                 </Typography>
                 <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 700, mx: 'auto', mb: 3 }}>
-                    Passionate about creating innovative solutions at the intersection of data science and software development.
-                    Specialized in time series forecasting, predictive analytics, and building interactive web applications.
+                    Analytical professional with expertise in transforming complex data into actionable business insights.
+                    Specialized in financial analysis, business intelligence, and creating data visualizations that drive strategic decision-making.
                 </Typography>
                 <Stack direction="row" spacing={2} justifyContent="center">
                     <Button
@@ -140,9 +159,9 @@ const SinglePage: React.FC = () => {
                     <Box sx={{ width: '100%' }}>
                         <Paper elevation={2} sx={{ p: 3 }}>
                             <Typography variant="h6" gutterBottom>
-                                Technical Skills
+                                Analytical Skills
                             </Typography>
-                            {technicalSkills.map((skill) => (
+                            {analyticalSkills.map((skill) => (
                                 <Box key={skill.name} sx={{ mb: 2 }}>
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                                         <Typography variant="body1">{skill.name}</Typography>
@@ -160,9 +179,9 @@ const SinglePage: React.FC = () => {
                     <Box sx={{ width: '100%' }}>
                         <Paper elevation={2} sx={{ p: 3 }}>
                             <Typography variant="h6" gutterBottom>
-                                Software & Tools
+                                Technical Skills
                             </Typography>
-                            {softwareSkills.map((skill) => (
+                            {technicalSkills.map((skill) => (
                                 <Box key={skill.name} sx={{ mb: 2 }}>
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                                         <Typography variant="body1">{skill.name}</Typography>
@@ -182,13 +201,43 @@ const SinglePage: React.FC = () => {
 
             <Divider sx={{ mb: 6 }} />
 
+            {/* Business Experience Section */}
+            <Box sx={{ mb: 8 }}>
+                <Typography variant="h4" component="h2" gutterBottom fontWeight="bold" textAlign="center">
+                    Business Experience
+                </Typography>
+                <Typography variant="body1" color="text.secondary" paragraph textAlign="center" sx={{ mb: 4 }}>
+                    Proven track record in delivering data-driven business solutions
+                </Typography>
+
+                <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
+                    {businessExperience.map((experience, index) => (
+                        <Box key={index} sx={{ width: '100%' }}>
+                            <Paper elevation={2} sx={{ p: 3, height: '100%' }}>
+                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                                    <BusinessIcon color="primary" sx={{ mr: 1.5 }} />
+                                    <Typography variant="h6" fontWeight="medium">
+                                        {experience.title}
+                                    </Typography>
+                                </Box>
+                                <Typography variant="body1">
+                                    {experience.description}
+                                </Typography>
+                            </Paper>
+                        </Box>
+                    ))}
+                </Stack>
+            </Box>
+
+            <Divider sx={{ mb: 6 }} />
+
             {/* Projects Section */}
             <Box sx={{ mb: 8 }}>
                 <Typography variant="h4" component="h2" gutterBottom fontWeight="bold" textAlign="center">
-                    Projects
+                    Analytics Projects
                 </Typography>
                 <Typography variant="body1" color="text.secondary" paragraph textAlign="center" sx={{ mb: 4 }}>
-                    Showcasing my recent work in data science, machine learning, and web development
+                    Showcasing my work in business intelligence, data analysis, and reporting
                 </Typography>
 
                 <Stack spacing={4}>
@@ -220,7 +269,7 @@ const SinglePage: React.FC = () => {
                                             href={project.github}
                                             target="_blank"
                                         >
-                                            GitHub Repository
+                                            Project Repository
                                         </Button>
                                     </CardActions>
                                 </Card>
@@ -255,7 +304,7 @@ const SinglePage: React.FC = () => {
                                             href={project.github}
                                             target="_blank"
                                         >
-                                            GitHub Repository
+                                            Project Repository
                                         </Button>
                                     </CardActions>
                                 </Card>
